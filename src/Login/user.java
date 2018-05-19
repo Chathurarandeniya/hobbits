@@ -22,18 +22,17 @@ public class user {
     public static String playerName;
 
     public boolean UserLogin(String username, String password) {
-        boolean loging= false;
+        boolean loging = false;
         try {
             ResultSet rst = (ResultSet) db.fetch("Select * from player where  Name='" + username + "'");
             while (rst.next()) {
                 userId = rst.getInt("playerId");
                 playerName = rst.getString("Name");
                 if (password.equals(rst.getString("password"))) {
-                    loging=true;
-                }else{
+                    loging = true;
+                } else {
                     //
                 }
-
             }
             if (rst.first()) {
             } else {
@@ -44,7 +43,6 @@ public class user {
             }
             rst.close();
             rst = null;
-            return false;
         } catch (Exception ex) {
             Logger.getLogger(user.class.getName()).log(Level.SEVERE, null, ex);
         }
