@@ -5,10 +5,20 @@
  */
 package glory.schema;
 
+import DatabaseClass.DBConnection;
+
 /**
  *
  * @author Hashane
  */
 public class LetterValueElement {
+    
+    private DBConnection dbConnection;
+    
+    public char selectSpecialLetter(){
+        char letter=' ';
+        
+        return letter;
+    }
     
 }
