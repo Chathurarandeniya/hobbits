@@ -33,7 +33,7 @@ public class Start extends javax.swing.JFrame {
         btn_newPlayer = new javax.swing.JButton();
         btn_newPlayer1 = new javax.swing.JButton();
         btn_newPlayer2 = new javax.swing.JButton();
-        jPanel2 = new javax.swing.JPanel();
+        player_thropy = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -41,15 +41,20 @@ public class Start extends javax.swing.JFrame {
 
         player_name.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         player_name.setForeground(new java.awt.Color(255, 255, 255));
-        player_name.setText("Name");
+        player_name.setText("Player 1");
 
         player_score.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         player_score.setForeground(new java.awt.Color(255, 255, 255));
-        player_score.setText("Score");
+        player_score.setText("500");
 
         btn_newPlayer.setBackground(new java.awt.Color(255, 255, 255));
         btn_newPlayer.setForeground(new java.awt.Color(0, 153, 153));
         btn_newPlayer.setText("New Player");
+        btn_newPlayer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_newPlayerActionPerformed(evt);
+            }
+        });
 
         btn_newPlayer1.setBackground(new java.awt.Color(255, 255, 255));
         btn_newPlayer1.setForeground(new java.awt.Color(0, 153, 153));
@@ -59,16 +64,10 @@ public class Start extends javax.swing.JFrame {
         btn_newPlayer2.setForeground(new java.awt.Color(0, 153, 153));
         btn_newPlayer2.setText("Leader Board");
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 90, Short.MAX_VALUE)
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 76, Short.MAX_VALUE)
-        );
+        player_thropy.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        player_thropy.setForeground(new java.awt.Color(255, 255, 255));
+        player_thropy.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/trophy.jpg"))); // NOI18N
+        player_thropy.setText("500");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -76,32 +75,32 @@ public class Start extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(89, 89, 89)
-                        .addComponent(btn_newPlayer, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(89, 89, 89)
-                        .addComponent(btn_newPlayer1, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(89, 89, 89)
-                        .addComponent(btn_newPlayer2, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(182, 182, 182))
-            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(player_name, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(player_score, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGap(307, 307, 307)
+                            .addComponent(player_score, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGap(89, 89, 89)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(btn_newPlayer, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btn_newPlayer1, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btn_newPlayer2, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(player_name, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(player_thropy, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(97, 97, 97)
                 .addComponent(player_name)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(player_score)
-                .addGap(20, 20, 20)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(player_thropy)
+                .addGap(22, 22, 22)
                 .addComponent(btn_newPlayer)
                 .addGap(18, 18, 18)
                 .addComponent(btn_newPlayer1)
@@ -123,6 +122,10 @@ public class Start extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btn_newPlayerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_newPlayerActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_newPlayerActionPerformed
 
     /**
      * @param args the command line arguments
@@ -164,8 +167,8 @@ public class Start extends javax.swing.JFrame {
     private javax.swing.JButton btn_newPlayer1;
     private javax.swing.JButton btn_newPlayer2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel player_name;
     private javax.swing.JLabel player_score;
+    private javax.swing.JLabel player_thropy;
     // End of variables declaration//GEN-END:variables
 }
