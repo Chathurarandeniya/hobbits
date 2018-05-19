@@ -59,10 +59,20 @@ public class Start extends javax.swing.JFrame {
         btn_newPlayer1.setBackground(new java.awt.Color(255, 255, 255));
         btn_newPlayer1.setForeground(new java.awt.Color(0, 153, 153));
         btn_newPlayer1.setText("Play");
+        btn_newPlayer1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_newPlayer1ActionPerformed(evt);
+            }
+        });
 
         btn_newPlayer2.setBackground(new java.awt.Color(255, 255, 255));
         btn_newPlayer2.setForeground(new java.awt.Color(0, 153, 153));
         btn_newPlayer2.setText("Leader Board");
+        btn_newPlayer2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_newPlayer2ActionPerformed(evt);
+            }
+        });
 
         player_thropy.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         player_thropy.setForeground(new java.awt.Color(255, 255, 255));
@@ -126,6 +136,14 @@ public class Start extends javax.swing.JFrame {
     private void btn_newPlayerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_newPlayerActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_newPlayerActionPerformed
+
+    private void btn_newPlayer1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_newPlayer1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_newPlayer1ActionPerformed
+
+    private void btn_newPlayer2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_newPlayer2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_newPlayer2ActionPerformed
 
     /**
      * @param args the command line arguments
