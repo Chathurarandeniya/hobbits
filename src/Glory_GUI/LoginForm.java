@@ -5,11 +5,15 @@
  */
 package Glory_GUI;
 
+import Login.user;
+
 /**
  *
  * @author Nisal Silva
  */
 public class LoginForm extends javax.swing.JFrame {
+
+    user us = new user();
 
     /**
      * Creates new form LoginForm
@@ -33,8 +37,8 @@ public class LoginForm extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        txtPassword = new javax.swing.JTextField();
+        txtUserName = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
@@ -70,29 +74,29 @@ public class LoginForm extends javax.swing.JFrame {
         jSeparator2.setForeground(new java.awt.Color(255, 204, 0));
         jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 280, 210, 20));
 
-        jTextField1.setBackground(new java.awt.Color(64, 64, 148));
-        jTextField1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jTextField1.setForeground(new java.awt.Color(255, 102, 102));
-        jTextField1.setText("Password");
-        jTextField1.setBorder(null);
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        txtPassword.setBackground(new java.awt.Color(64, 64, 148));
+        txtPassword.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        txtPassword.setForeground(new java.awt.Color(255, 102, 102));
+        txtPassword.setText("Password");
+        txtPassword.setBorder(null);
+        txtPassword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                txtPasswordActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 262, 210, 20));
+        jPanel1.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 262, 210, 20));
 
-        jTextField2.setBackground(new java.awt.Color(64, 64, 148));
-        jTextField2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jTextField2.setForeground(new java.awt.Color(255, 102, 102));
-        jTextField2.setText("Name");
-        jTextField2.setBorder(null);
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        txtUserName.setBackground(new java.awt.Color(64, 64, 148));
+        txtUserName.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        txtUserName.setForeground(new java.awt.Color(255, 102, 102));
+        txtUserName.setText("Name");
+        txtUserName.setBorder(null);
+        txtUserName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                txtUserNameActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 202, 210, 20));
+        jPanel1.add(txtUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 202, 210, 20));
 
         jLabel6.setFont(new java.awt.Font("Jokerman", 1, 20)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 204, 0));
@@ -106,6 +110,11 @@ public class LoginForm extends javax.swing.JFrame {
         jButton1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton1.setContentAreaFilled(false);
         jButton1.setOpaque(true);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 330, 90, 30));
 
         jPanel2.setBackground(new java.awt.Color(0, 0, 0));
@@ -140,18 +149,33 @@ public class LoginForm extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void txtUserNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUserNameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_txtUserNameActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void txtPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPasswordActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_txtPasswordActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        if (txtUserName.getText().equals("") || txtPassword.getText().equals("")) {
+            jLabel3.setVisible(false);
+            // msg = "Fill Username,Password Properly!";
+            txtUserName.grabFocus();
+            //t.start();
+            //  y = 1;
+        } else if (us.UserLogin(txtUserName.getText(), txtPassword.getText())) {
+            System.out.println("hi");
+//dispose();
+
+           // en = null;
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -200,7 +224,7 @@ public class LoginForm extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField txtPassword;
+    private javax.swing.JTextField txtUserName;
     // End of variables declaration//GEN-END:variables
 }

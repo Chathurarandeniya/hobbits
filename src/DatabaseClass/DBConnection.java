@@ -24,9 +24,9 @@ public class DBConnection {
 //  protected static String host    =  "10.1.1.2";
     protected static String host = "localhost";
     protected static String port = "3306";
-    protected static String DB = "samrogl";
+    protected static String DB = "glory";
     protected static String username = "root";
-    protected static String pasword = "1234";
+    protected static String pasword = "root";
 
     public static Connection connect() throws ClassNotFoundException {
         try {
