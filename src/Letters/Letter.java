@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import java.util.Random;
 /**
  *
  * @author User
@@ -21,6 +22,10 @@ public class Letter {
     private char letter;
     private int score;
     private int letterType;
+    
+    
+    Random random = new Random();
+    char uniqueLetter;
 
     public Letter(char letter, int score, int letterType) {
         this.letter = letter;
@@ -28,8 +33,21 @@ public class Letter {
         this.letterType = letterType;
     }
     
-    
-    public List<Letter> selecteSpecial(){
+    public char[] FirstThreeLetters() {
+        char[] firstThreeLetters = new char[3];
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j >= 0; j++) {
+                uniqueLetter = (char) (random.nextInt(26) + 'A');
+               // System.out.println(uniqueLetter);
+                if (firstThreeLetters[0] != uniqueLetter && firstThreeLetters[1] != uniqueLetter && firstThreeLetters[2] != uniqueLetter) {
+                    firstThreeLetters[i] = uniqueLetter;
+                    break;
+                }
+            }
+        }
+       return firstThreeLetters;
+    }
+    public List<Letter> SelecteSpecial(){
     List<Letter> returnList=null;
         try {
                 String query="SELECT letter,score,letterType FROM letter ORDER BY RAND() LIMIT 3";
@@ -44,7 +62,7 @@ public class Letter {
         return returnList;
     }
     
-    public Letter selectVowel(){
+    public Letter SelectVowel(){
         Letter returnObj=null;
         try{
             String query="SELECT letter,score,letterType FROM letter WHERE letterType=1 ORDER BY RAND() LIMIT 1";
@@ -59,7 +77,7 @@ public class Letter {
         return returnObj;
     }
     
-    public Letter selectConsonants (){
+    public Letter SelectConsonants (){
         Letter returnObj=null;
         try{
             String query="SELECT letter,score,letterType FROM letter WHERE letterType=2 ORDER BY RAND() LIMIT 1";

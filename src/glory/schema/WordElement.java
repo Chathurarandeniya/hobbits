@@ -9,6 +9,29 @@ package glory.schema;
  *
  * @author Hashane
  */
-public class WordElement {
+public class WordElement{
+    
+    private int noOfLetters;
+    private boolean valid;
+    
+    public WordElement(int noOfLetters, boolean valid) {
+        this.noOfLetters = noOfLetters;
+        this.valid = valid;
+    }
+      public int getNoOfLetters() {
+        return noOfLetters;
+    }
+
+    public void setNoOfLetters(int noOfLetters) {
+        this.noOfLetters = noOfLetters;
+    }
+
+    public boolean isValid() {
+        return valid;
+    }
+
+    public void setValid(boolean valid) {
+        this.valid = valid;
+    }
     
 }

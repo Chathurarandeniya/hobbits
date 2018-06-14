@@ -5,20 +5,49 @@
  */
 package glory.schema;
 
-import DatabaseClass.DBConnection;
 
 /**
  *
  * @author Hashane
  */
-public class LetterValueElement {
-    
-    private DBConnection dbConnection;
-    
-    public char selectSpecialLetter(){
-        char letter=' ';
-        
+public class LetterValueElement extends WordElement{
+
+private char letter;
+private int letterValue;
+private char letterType;
+
+    public LetterValueElement(char letter, int letterValue, char letterType,int noOfLetters, boolean valid) {
+        super(noOfLetters,valid);
+        this.letter = letter;
+        this.letterValue = letterValue;
+        this.letterType = letterType;
+       
+    }
+
+    public void setLetter(char letter) {
+        this.letter = letter;
+    }
+
+    public void setLetterValue(int letterValue) {
+        this.letterValue = letterValue;
+    }
+
+    public void setLetterType(char letterType) {
+        this.letterType = letterType;
+    }
+
+    public char getLetter() {
         return letter;
     }
+
+    public int getLetterValue() {
+        return letterValue;
+    }
+
+    public char getLetterType() {
+        return letterType;
+    }
+    
+
     
 }

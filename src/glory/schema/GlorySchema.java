@@ -5,6 +5,8 @@
  */
 package glory.schema;
 
+import Letters.Letter;
+
 /**
  *
  * @author Hashane
@@ -16,6 +18,9 @@ public class GlorySchema {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        Letter letter=new Letter('a', 1, 1);
+        System.out.println(letter.FirstThreeLetters()); 
+        
     }
     
 }
