@@ -13,6 +13,9 @@ public class WordElement{
     
     private int noOfLetters;
     private boolean valid;
+
+    public WordElement() {
+    }
     
     public WordElement(int noOfLetters, boolean valid) {
         this.noOfLetters = noOfLetters;

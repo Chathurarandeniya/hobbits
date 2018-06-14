@@ -12,40 +12,44 @@ package glory.schema;
  */
 public class LetterValueElement extends WordElement{
 
-private char letter;
-private int letterValue;
-private char letterType;
+private String letter;
+private int score;
+private String letterType;
 
-    public LetterValueElement(char letter, int letterValue, char letterType,int noOfLetters, boolean valid) {
+    public LetterValueElement() { 
+        
+    }
+
+
+    public LetterValueElement(String letter, int score, String letterType,int noOfLetters, boolean valid) {
         super(noOfLetters,valid);
         this.letter = letter;
-        this.letterValue = letterValue;
+        this.score = score;
         this.letterType = letterType;
        
     }
 
-    public void setLetter(char letter) {
+    public void setLetter(String letter) {
         this.letter = letter;
     }
 
-    public void setLetterValue(int letterValue) {
-        this.letterValue = letterValue;
-    }
-
-    public void setLetterType(char letterType) {
+    public void setLetterType(String letterType) {
         this.letterType = letterType;
     }
+    
+    public void setScore(int score) {
+        this.score = score;
+    }
 
-    public char getLetter() {
+    public String getLetter() {
         return letter;
     }
 
-    public int getLetterValue() {
-        return letterValue;
-    }
-
-    public char getLetterType() {
+    public String getLetterType() {
         return letterType;
+    }
+     public int getScore() {
+        return score;
     }
     
 
